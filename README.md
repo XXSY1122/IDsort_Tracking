@@ -16,21 +16,31 @@ ID switching의 문제가 있다. 다양한 객체를 추적할 때, 각 개체�
 
 - custom tracking model training <br>
 
-https://github.com/deshwalmahesh/yolov7-deepsort-tracking
-## 코드
+## 코드 사용 (in vscode)
+
+다운로드 : https://github.com/deshwalmahesh/yolov7-deepsort-tracking
+
+
+
+```
 from detection_helpers import *
 from tracking_helpers import *
 from bridge_wrapper import *
 from PIL import Image
 
 # vs code 기준
-# pip install -r requirements.txt
-# data > coco.yaml 수정
-detector = Detector(classes = [0,1]) # it'll detect ONLY [person,horses,sports ball]. class = None means detect all classes. List info at: "data/coco.yaml"
+# 터미널 : pip install -r requirements.txt
+# 폴더내 파일 수정 : data > coco.yaml 커스텀 내용대로 수정
+detector = Detector(classes = [0,1])
 
-detector.load_model('best.pt',) # pass the path to the trained weight file
+# 이부분 수정해야 하는지 검토 필요 ',' <- 이부분
+detector.load_model('best.pt',)
 
 tracker = YOLOv7_DeepSORT(reID_model_path="./deep_sort/model_weights/mars-small128.pb", detector=detector)
 
-#tracker.track_video("/content/drive/MyDrive/10.mp4", output="./IO_data/output/11.mp4", show_live = False, skip_frames = 0, count_objects = True, verbose=1)
+#영상 기준
+#tracker.track_video("10.mp4", output="./IO_data/output/11.mp4", show_live = False, skip_frames = 0, count_objects = True, verbose=1)
+
+#실시간 웹캠 기준
 tracker.track_video(0, output="./IO_data/output/webcam_output.avi", show_live = True, skip_frames = 0, count_objects = True, verbose=1) 
+```
