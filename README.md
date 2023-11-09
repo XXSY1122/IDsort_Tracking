@@ -15,3 +15,22 @@ ID switching의 문제가 있다. 다양한 객체를 추적할 때, 각 개체�
 
 
 - custom tracking model training <br>
+
+https://github.com/deshwalmahesh/yolov7-deepsort-tracking
+## 코드
+from detection_helpers import *
+from tracking_helpers import *
+from bridge_wrapper import *
+from PIL import Image
+
+# vs code 기준
+# pip install -r requirements.txt
+# data > coco.yaml 수정
+detector = Detector(classes = [0,1]) # it'll detect ONLY [person,horses,sports ball]. class = None means detect all classes. List info at: "data/coco.yaml"
+
+detector.load_model('best.pt',) # pass the path to the trained weight file
+
+tracker = YOLOv7_DeepSORT(reID_model_path="./deep_sort/model_weights/mars-small128.pb", detector=detector)
+
+#tracker.track_video("/content/drive/MyDrive/10.mp4", output="./IO_data/output/11.mp4", show_live = False, skip_frames = 0, count_objects = True, verbose=1)
+tracker.track_video(0, output="./IO_data/output/webcam_output.avi", show_live = True, skip_frames = 0, count_objects = True, verbose=1) 
