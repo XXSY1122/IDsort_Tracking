@@ -28,13 +28,22 @@ Python 3.9.18
 <br><br>
 
 ### 시작에 앞서..
-1. ```pip install -e git+https://github.com/samson-wang/cython_bbox.git#egg=cython-bbox``` 먼저 진행한다.
-2. 'requirements.txt' 내용을 알맞게 수정한다.
-#### 수정사항
-- torch==2.0.0 <br>
-- torchvision==0.15.0 <br>
-- ~PyMuPDF==1.20.2~ # 삭제하세요. <br>
+1. 가상환경에서 진행한다. <br> ```/opt/homebrew/bin/python3.9 -m venv venv```<br> ```source venv/bin/activate```
+2. 터미널을 켜고 실행한다. <br> ```pip install -e git+https://github.com/samson-wang/cython_bbox.git#egg=cython-bbox```
+3. 'requirements.txt' 내용을 알맞게 수정한다.
+```
+..
+torch==2.0.0
+torchvision==0.15.0
+PyMuPDF==1.20.2 # 삭제하세요.
+...
+```
 <br>
+4. 터미널을 켜고 실행한다. <br> 
+
+```pip install PyMuPDF``` <br>
+```pip install -r requirements.txt```
+
 
 ### 그외 에러 해결
 #### Failed building wheel for PyMuPDF 문제 해결 (MAC)
