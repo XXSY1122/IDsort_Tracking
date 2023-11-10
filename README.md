@@ -17,9 +17,36 @@ ID switching의 문제가 있다. 다양한 객체를 추적할 때, 각 개체�
 - custom tracking model training <br>
 
 
-
-## 현재 사용 코드 (in vscode)
+---
+## ✅ 현재 사용 코드 (in vscode)
 참고 : https://github.com/theos-ai/easy-yolov7#detect-the-webcam
+
+
+### 환경
+MAC OS [vscode] <br>
+Python 3.9.18
+<br><br>
+
+### 시작에 앞서..
+1. ```pip install -e git+https://github.com/samson-wang/cython_bbox.git#egg=cython-bbox``` 먼저 진행한다.
+2. 'requirements.txt' 내용을 알맞게 수정한다.
+#### 수정사항
+- torch==2.0.0 <br>
+- torchvision==0.15.0 <br>
+- ~PyMuPDF==1.20.2~ # 삭제하세요. <br>
+<br>
+
+### 그외 에러 해결
+#### Failed building wheel for PyMuPDF 문제 해결 (MAC)
+- MAC에서는 터미널을 열고 다음을 수행한다. <br>
+```brew install swig```
+
+
+
+
+
+
+---
 
 ## 기존 일반 코드 (in vscode)
 
