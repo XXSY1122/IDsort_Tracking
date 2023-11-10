@@ -16,7 +16,12 @@ ID switching의 문제가 있다. 다양한 객체를 추적할 때, 각 개체�
 
 - custom tracking model training <br>
 
-## 코드 사용 (in vscode)
+
+
+## 현재 사용 코드 (in vscode)
+참고 : https://github.com/theos-ai/easy-yolov7#detect-the-webcam
+
+## 기존 일반 코드 (in vscode)
 
 다운로드 : https://github.com/deshwalmahesh/yolov7-deepsort-tracking
 
